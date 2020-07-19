@@ -83,7 +83,7 @@ function optimizeImages() {
 // delete existing build
 const clean = () => del(['./build']);
 
-// watch all the tasks
+// watch tasks
 function watchTask() {
     browserSync.init({
         server: {
@@ -97,7 +97,6 @@ function watchTask() {
     watch(htmlTemplatesPath, nunjucks).on('change', browserSync.reload);
 }
 
-// exports.copyHtml = copyHtml;
 exports.nunjucks = nunjucks;
 exports.nunjucksMinify = nunjucksMinify;
 exports.optimizeImages = optimizeImages;
@@ -106,6 +105,8 @@ exports.copyCss = copyCss;
 exports.minifyJs = minifyJs;
 exports.minifyCss = minifyCss;
 
+// 'gulp watch' to watch tasks and start live reload session
 exports.watch = series(parallel(nunjucks, copyJS, copyCss), watchTask);
 
+// 'gulp' to create the build
 exports.default = series(clean, parallel(nunjucksMinify, optimizeImages, minifyJs, minifyCss));
