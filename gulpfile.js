@@ -68,7 +68,7 @@ function minifyJs() {
     return src(jsPath)
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['@babel/preset-env'] }))
-        // .pipe(concat('app.js'))
+        .pipe(concat('app.js'))
         .pipe(terser())
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./build/assets/js'));
