@@ -14,3 +14,4 @@ A simple gulp-4 boilerplate for front-end development.
 * `npm install` to install all the dependencies
 * `gulp` to create build
 * `gulp watch` to start the live session
+* `npm run lint` to run ESLint
