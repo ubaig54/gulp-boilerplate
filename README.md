@@ -10,7 +10,7 @@ A simple gulp-4 boilerplate for front-end development.
 * Optimized images
 * Transcompilation for ES6
 
-# Getting started
+# Important commands
 * `npm install` to install all the dependencies
 * `gulp` to create build
 * `gulp watch` to start the live session
