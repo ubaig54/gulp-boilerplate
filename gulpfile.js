@@ -91,7 +91,7 @@ function watchTask() {
         },
         notify: false
     });
-    watch(cssPath, copyCss);
+    watch(cssPath, copyCss).on('change', browserSync.reload);
     watch(jsPath, copyJS).on('change', browserSync.reload);
     watch(htmlPagesPath, nunjucks).on('change', browserSync.reload);
     watch(htmlTemplatesPath, nunjucks).on('change', browserSync.reload);
